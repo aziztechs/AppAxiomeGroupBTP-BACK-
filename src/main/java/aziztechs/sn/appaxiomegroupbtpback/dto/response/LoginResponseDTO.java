@@ -9,6 +9,8 @@ public class LoginResponseDTO {
     private UtilisateurResponseDTO utilisateur;
 
     public LoginResponseDTO(String jwt, UtilisateurResponseDTO currentUserProfile) {
+        this.token = jwt;
+        this.utilisateur = currentUserProfile;
     }
 
 }

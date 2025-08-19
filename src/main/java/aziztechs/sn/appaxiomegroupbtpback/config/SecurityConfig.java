@@ -21,13 +21,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private  JwtAuthEntryPoint authEntryPoint;
-    private JwtTokenFilter jwtTokenFilter;
-
-    public SecurityConfig(JwtAuthEntryPoint authEntryPoint, JwtTokenFilter jwtTokenFilter) {
-        this.authEntryPoint = authEntryPoint;
-        this.jwtTokenFilter = jwtTokenFilter;
-    }
+    private final JwtAuthEntryPoint authEntryPoint;
+    private final JwtTokenFilter jwtTokenFilter;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
