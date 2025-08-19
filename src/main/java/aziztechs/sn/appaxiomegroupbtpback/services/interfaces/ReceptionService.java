@@ -3,6 +3,8 @@ package aziztechs.sn.appaxiomegroupbtpback.services.interfaces;
 import aziztechs.sn.appaxiomegroupbtpback.dto.requiest.ReceptionRequestDTO;
 import aziztechs.sn.appaxiomegroupbtpback.dto.response.ReceptionResponseDTO;
 
+import java.util.List;
+
 public interface ReceptionService {
     ReceptionResponseDTO createReception(ReceptionRequestDTO receptionDTO);
     ReceptionResponseDTO updateReception(Long id, ReceptionRequestDTO receptionDTO);
