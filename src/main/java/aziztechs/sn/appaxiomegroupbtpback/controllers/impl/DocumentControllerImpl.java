@@ -2,6 +2,7 @@ package aziztechs.sn.appaxiomegroupbtpback.controllers.impl;
 
 
 import aziztechs.sn.appaxiomegroupbtpback.controllers.interfaces.DocumentController;
+import aziztechs.sn.appaxiomegroupbtpback.dto.requiest.DocumentRequestDTO;
 import aziztechs.sn.appaxiomegroupbtpback.dto.response.DocumentResponseDTO;
 import aziztechs.sn.appaxiomegroupbtpback.services.interfaces.DocumentService;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,10 @@ public class DocumentControllerImpl implements DocumentController {
             @RequestParam Long chantierId,
             @RequestParam String type,
             @RequestParam MultipartFile file) {
-        DocumentResponseDTO response = documentService.uploadDocument(chantierId, type, file);
+        DocumentRequestDTO documentDTO = new DocumentRequestDTO();
+        documentDTO.setType(type);
+        documentDTO.setChantierId(chantierId);
+        DocumentResponseDTO response = documentService.uploadDocument(documentDTO, file);
         return ResponseEntity.ok(response);
     }
 
